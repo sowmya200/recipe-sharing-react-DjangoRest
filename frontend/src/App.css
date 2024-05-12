@@ -32,30 +32,50 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes flow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .water-flow {
   width: 850px;
-  height: 630px;
+  height: 570px;
   background: linear-gradient(35deg, #a6ce93, #9fe77e, #91cc7a, #a7ce95);
   background-size: 400% 400%;
   position: absolute;
   top: 0;
   right: 0;
   border-bottom-left-radius: 100%;
-  
-  z-index: 0; /* Ensure it's behind all interactive elements */
+
+  z-index: 0;
+  /* Ensure it's behind all interactive elements */
 
   /* Clip path for zigzag effect */
-  
 
+
+}
+
+.bar-wrapper {
+  box-shadow: 0px 3px 5px -3px rgba(89, 88, 88, 0.15), 0px -3px 5px -3px rgba(89, 88, 88, 0.15);
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

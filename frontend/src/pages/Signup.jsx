@@ -27,7 +27,7 @@ const Signup = () => {
 
                     {/* Right Section (Form) */}
                     <div className="w-1/2 ml-2">
-                        <p className="text-gray-700 text-center text-2xl font-bold ml-8 mb-4 mt-24">Want to join our Family </p>
+                        <p className="text-gray-700 text-center text-2xl font-bold ml-8 mb-4 mt-24">Register</p>
                         <form >
                             <div className="mb-4 pt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2 ml-2" htmlFor="username">Username</label>
@@ -63,7 +63,7 @@ const Signup = () => {
                         </div>
 
                         <div className="flex mt-6">
-                            <p className="text-gray-500 ml-2 text-sm">Already have an account? <a href="/" className="font-semibold hover:underline" style={{ color: "#608D4B" }} >Log in </a></p>
+                            <p className="text-gray-500 ml-2 text-sm">Already have an account? <a href="/login" className="font-semibold hover:underline" style={{ color: "#608D4B" }} >Log in </a></p>
 
                         </div>
 

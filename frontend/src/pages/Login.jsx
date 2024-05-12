@@ -27,7 +27,7 @@ const Signup = () => {
 
                     {/* Right Section (Form) */}
                     <div className="w-1/2 ml-2">
-                        <p className="text-gray-700 text-center text-2xl font-bold ml-8 mb-4 mt-24">Welcome User </p>
+                        <p className="text-gray-700 text-center text-2xl font-bold ml-8 mb-4 mt-24">Login </p>
                         <form >
                             <div className="mb-4 pt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2 ml-2" htmlFor="username">Username</label>
@@ -41,7 +41,7 @@ const Signup = () => {
                                 <label className="block text-gray-700 text-sm font-bold mb-2 ml-2" htmlFor="password">Password</label>
                                 <input className="shadow appearance-none border rounded w-full ml-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" />
                             </div>
-                            
+
                             <div className="flex items-center justify-between">
                                 <button className="bg-[#608D4B] hover:bg-[#43712E] text-white ml-2 font-semibold mt-4 py-2 px-8 rounded focus:outline-none focus:shadow-outline" type="button">
                                     Login
@@ -49,7 +49,7 @@ const Signup = () => {
                             </div>
 
                         </form>
-                       
+
 
                         <div className="flex mt-6">
                             <p className="text-gray-500 ml-2 text-sm">Don't have an account? <a href="/signup" className="font-semibold hover:underline" style={{ color: "#608D4B" }} >Sign up </a></p>
