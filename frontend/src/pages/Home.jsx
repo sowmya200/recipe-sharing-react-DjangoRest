@@ -17,35 +17,41 @@ import thai from '../assets/thai.png';
 import middle from '../assets/middle.png';
 import greek from '../assets/greek.png';
 import soup from '../assets/soup.png';
+import salad from '../assets/salads.png';
+import beverages from '../assets/beverages.png';
+import starter from '../assets/starters.png';
+import main from '../assets/main.png';
+import dessert from '../assets/dessert.png';
+import dips from '../assets/dips.png';
+import snacks from '../assets/snacks.png';
 
 
 export default function Home() {
-    
+
     const cards = [
-        { id: 1, name: "American", overlayImage:american },
+        { id: 1, name: "American", overlayImage: american },
         { id: 2, name: "Italian", overlayImage: italian },
-        { id: 3, name: "Indian", overlayImage:indian },
+        { id: 3, name: "Indian", overlayImage: indian },
         { id: 4, name: "Chinese", overlayImage: chinese },
-        { id: 5, name: "Mexican", overlayImage:mexican },
+        { id: 5, name: "Mexican", overlayImage: mexican },
         { id: 6, name: "French", overlayImage: french },
         { id: 7, name: "Japanese", overlayImage: japanese },
         { id: 8, name: "Thai", overlayImage: thai },
-        { id: 9, name: "Middle Eastern", overlayImage:middle },
+        { id: 9, name: "Middle Eastern", overlayImage: middle },
         { id: 10, name: "Greek", overlayImage: greek },
-        
+
     ];
     const courses = [
-        { id: 1, name: "Soup", overlayImage:soup },
-        // { id: 2, name: "Italian", overlayImage: italian },
-        // { id: 3, name: "Indian", overlayImage:indian },
-        // { id: 4, name: "Chinese", overlayImage: chinese },
-        // { id: 5, name: "Mexican", overlayImage:mexican },
-        // { id: 6, name: "French", overlayImage: french },
-        // { id: 7, name: "Japanese", overlayImage: japanese },
-        // { id: 8, name: "Thai", overlayImage: thai },
-        // { id: 9, name: "Middle Eastern", overlayImage:middle },
-        // { id: 10, name: "Greek", overlayImage: greek },
-        
+        { id: 1, name: "Soup", overlayImage: soup },
+        { id: 2, name: "Salad", overlayImage: salad },
+        { id: 3, name: "Beverages", overlayImage: beverages },
+        { id: 4, name: "Starter", overlayImage: starter },
+        { id: 5, name: "Main Course", overlayImage: main },
+        { id: 6, name: "Dessert", overlayImage: dessert },
+        { id: 7, name: "Curries and Dips", overlayImage: dips },
+        { id: 8, name: "Snack", overlayImage: snacks },
+
+
     ];
 
     return (
@@ -123,21 +129,22 @@ export default function Home() {
 
             {/* Cuisines Section */}
             <div className="ml-16 text-4xl font-bold pt-6 mt-10 " >Cuisines</div>
-            <div className=" grid grid-cols-4 ">
-            {cards.map(card => (
-                <CuisineCard key={card.id} name={card.name} overlayImage={card.overlayImage} />
-            ))}
-        </div>
+            <div className=" grid grid-cols-3 ">
+                {cards.map(card => (
+                    <CuisineCard key={card.id} name={card.name} overlayImage={card.overlayImage} />
+                ))}
+            </div>
 
-        
 
-        {/* Course of Meal */}
-        <div className="ml-16 text-4xl font-bold pt-6 mt-10 " >Course of Meal</div>
-            <div className=" grid grid-cols-4 ">
-            {courses.map(course => (
-                <CourseCard key={course.id} name={course.name} overlayImage={course.overlayImage} />
-            ))}
-        </div>
+
+            {/* Course of Meal */}
+            <div className="ml-16 text-4xl font-bold pt-6 mt-16 " >Course of Meal</div>
+            <div className=" grid grid-cols-3 ">
+                {courses.map(course => (
+                    <CourseCard key={course.id} name={course.name} overlayImage={course.overlayImage} />
+                ))}
+            </div>
+            <div className='mb-16'></div>
 
 
         </div >
