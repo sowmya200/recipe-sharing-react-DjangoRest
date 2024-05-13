@@ -9,7 +9,9 @@ const Signup = () => {
         <div>
             <div className=" w-full text-white flex  items-center mt-12">
                 <div className="flex items-center">
-                    <img src={logo} alt="Logo" className="w-60 h-29 object-contain ml-14" />
+                <a href="/">
+                  <img src={logo} alt="Logo" className="w-60 h-29 object-contain ml-14" />
+                </a>
 
                 </div>
                 <div className="ml-auto mr-14">

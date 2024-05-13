@@ -1,10 +1,53 @@
 import React from 'react';
+import '../App.css';
+import CuisineCard from '../components/CuisineCard';
+import CourseCard from '../components/CourseCard';
 import { Link } from 'react-router-dom';
 import logo from "../assets/foodlogo.png";
 import hpage from "../assets/homepage1.png";
 import hpage1 from "../assets/homepage2.png";
+import american from '../assets/american.png';
+import italian from '../assets/italian.png';
+import indian from '../assets/indian.png';
+import chinese from '../assets/chinese.png';
+import mexican from '../assets/mexican.png';
+import french from '../assets/french.png';
+import japanese from '../assets/japanese.png';
+import thai from '../assets/thai.png';
+import middle from '../assets/middle.png';
+import greek from '../assets/greek.png';
+import soup from '../assets/soup.png';
+
 
 export default function Home() {
+    
+    const cards = [
+        { id: 1, name: "American", overlayImage:american },
+        { id: 2, name: "Italian", overlayImage: italian },
+        { id: 3, name: "Indian", overlayImage:indian },
+        { id: 4, name: "Chinese", overlayImage: chinese },
+        { id: 5, name: "Mexican", overlayImage:mexican },
+        { id: 6, name: "French", overlayImage: french },
+        { id: 7, name: "Japanese", overlayImage: japanese },
+        { id: 8, name: "Thai", overlayImage: thai },
+        { id: 9, name: "Middle Eastern", overlayImage:middle },
+        { id: 10, name: "Greek", overlayImage: greek },
+        
+    ];
+    const courses = [
+        { id: 1, name: "Soup", overlayImage:soup },
+        // { id: 2, name: "Italian", overlayImage: italian },
+        // { id: 3, name: "Indian", overlayImage:indian },
+        // { id: 4, name: "Chinese", overlayImage: chinese },
+        // { id: 5, name: "Mexican", overlayImage:mexican },
+        // { id: 6, name: "French", overlayImage: french },
+        // { id: 7, name: "Japanese", overlayImage: japanese },
+        // { id: 8, name: "Thai", overlayImage: thai },
+        // { id: 9, name: "Middle Eastern", overlayImage:middle },
+        // { id: 10, name: "Greek", overlayImage: greek },
+        
+    ];
+
     return (
         <div>
             <div className="w-full text-white flex items-center mt-12" style={{ zIndex: 100, position: 'relative' }}>
@@ -48,6 +91,9 @@ export default function Home() {
 
             {/* Waterflow (assuming it's a styled component or has appropriate styling) */}
             <div className="water-flow"></div>
+
+            {/* Create Recipes Section */}
+
             <div className="max-w-7xl mx-auto  px-8 pt-6 pb-8 mb-4 mt-32 ">
                 <div className="flex justify-center">
                     {/* Left Section (Image) */}
@@ -72,6 +118,26 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+
+
+            {/* Cuisines Section */}
+            <div className="ml-16 text-4xl font-bold pt-6 mt-10 " >Cuisines</div>
+            <div className=" grid grid-cols-4 ">
+            {cards.map(card => (
+                <CuisineCard key={card.id} name={card.name} overlayImage={card.overlayImage} />
+            ))}
+        </div>
+
+        
+
+        {/* Course of Meal */}
+        <div className="ml-16 text-4xl font-bold pt-6 mt-10 " >Course of Meal</div>
+            <div className=" grid grid-cols-4 ">
+            {courses.map(course => (
+                <CourseCard key={course.id} name={course.name} overlayImage={course.overlayImage} />
+            ))}
+        </div>
 
 
         </div >

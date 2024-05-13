@@ -79,3 +79,38 @@
   justify-content: space-between;
   align-items: center;
 }
+
+/* CARD COMPONENT CSS */
+
+.cuisine-card {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.cuisine-card:hover {
+  transform: scale(1.05);
+}
+
+.cuisine-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+.cuisine-info {
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.cuisine-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}

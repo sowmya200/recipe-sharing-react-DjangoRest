@@ -9,8 +9,9 @@ const Signup = () => {
         <div>
             <div className=" w-full text-white flex  items-center mt-12">
                 <div className="flex items-center">
-                    <img src={logo} alt="Logo" className="w-60 h-29 object-contain ml-14" />
-
+                <a href="/">
+                  <img src={logo} alt="Logo" className="w-60 h-29 object-contain ml-14" />
+                </a>
                 </div>
                 <div className="ml-auto mr-14">
                     <Link to="/signup" className="bg-gray-100 text-black hover:bg-[#979996] text-sm font-bold py-3 px-6 rounded mr-4">Sign Up</Link>
@@ -27,12 +28,10 @@ const Signup = () => {
 
                     {/* Right Section (Form) */}
                     <div className="w-1/2 ml-2">
-                        <p className="text-gray-700 text-center text-2xl font-bold ml-8 mb-4 mt-24">Login </p>
+                        <p className="text-gray-700 text-center text-2xl font-bold ml-8 mb-4 mt-52">Login </p>
                         <form >
-                            <div className="mb-4 pt-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-2" htmlFor="username">Username</label>
-                                <input className="shadow appearance-none border rounded w-full ml-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
-                            </div>
+
+                           
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2 ml-2" htmlFor="email">Email</label>
                                 <input className="shadow appearance-none border rounded w-full ml-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" />
