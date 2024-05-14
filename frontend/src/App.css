@@ -114,3 +114,16 @@
   justify-content: center;
   padding: 20px;
 }
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: 3px solid transparent; /* Ensures layout doesn't shift when border changes */
+}
+
+.card:active {
+  transform: scale(1.05); /* Makes the card pop out */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.24); /* Adds shadow for depth */
+  border-color: #608D4B; /* Green border */
+}
+

@@ -5,6 +5,11 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import CreateRecipe from './pages/CreateRecipe';
+import CuisinePage from './pages/CuisinePage';
+import CoursePage from './pages/CoursePage';
+import RecipePage from './pages/RecipePage'
+
+
 
 
 function App() {
@@ -15,6 +20,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/createrecipe" element={<CreateRecipe />} />
+        <Route path="/cuisine/:name" element={<CuisinePage />} />
+        <Route path="/course/:type" element={<CoursePage />} />
+        <Route path="/recipe/:name" element={<RecipePage />} />
+     
 
       </Routes>
     </Router>
