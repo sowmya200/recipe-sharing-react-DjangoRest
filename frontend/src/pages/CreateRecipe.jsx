@@ -7,8 +7,8 @@ export default function Home() {
 
     const [focusStates, setFocusStates] = useState({});
     const [isClicked, setIsClicked] = useState(false);
-   
-    const [previewUrl, setPreviewUrl] = useState(''); 
+    const [file, setFile] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
     const [description, setDescription] = useState("");
     const [wordCount, setWordCount] = useState(0);
     const [ingredients, setIngredients] = useState([{ id: 0, value: "" }]);
@@ -38,11 +38,15 @@ export default function Home() {
     };
 
     const handleFileChange = (event) => {
-        const file = event.target.files[0]; // Get the first file
-        if (file) {
-            const url = URL.createObjectURL(file); // Create a URL for the file
-            setPreviewUrl(url); // Set the preview URL to the newly created URL
-        }
+        const selectedFile = event.target.files[0];
+        setFile(selectedFile);
+
+        // Read the file and display preview
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setImageUrl(reader.result);
+        };
+        reader.readAsDataURL(selectedFile);
     };
 
     // Function to simulate a click on the file input field
@@ -126,20 +130,7 @@ export default function Home() {
                   <img src={logo} alt="Logo" className="w-60 h-29 object-contain ml-14" />
                 </a>
                 </div>
-                <div className="flex items-center ml-auto mr-14 realtive"> {/* Aligns to the right */}
-                    {/* Search Bar */}
-                    <div className="relative">
-                        <input type="text" placeholder="Search..." className="bg-gray-100 text-black text-sm font-bold py-2 px-4 rounded pr-10" />
-                        {/* Search Icon */}
-                        <FaSearch className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-500 cursor-pointer" />
-                    </div>
-
-                    {/* Profile Image */}
-                    <div className="relative">
-                        <img src={profile} alt="Profile" className="w-15 h-14 rounded-full cursor-pointer" />
-                        {/* Online indicator */}
-                    </div>
-                </div>
+                
             </div>
 
             {/* Bar Below Logo Content */}
@@ -197,19 +188,17 @@ export default function Home() {
             <div className="flex items-center">
                 <input
                     id="fileInput"
-                    type="file"
-                    hidden
+                    type="file"                    
                     accept="image/*"
+                    className='ml-2'
                     onChange={handleFileChange}
                 />
-                <button
+                {/* <button
                     onClick={triggerFileSelectPopup}
                     className={`flex items-center justify-center text-black py-5 px-4 rounded focus:outline-none border ml-2 ${isClicked ? 'border-[#608D4B] border-solid border-2' : 'border-gray-200'}`}>
                     <FaUpload className="mr-2" style={{ color: '#608D4B' }} /> Select Image
-                </button>
-                {previewUrl && (
-                    <img src={previewUrl} alt="Preview"  className="ml-64" style={{ width: '200px', height: '200px', marginLeft: '100px' }} />
-                )}
+                </button> */}
+               
             </div>
         </div>
 
@@ -355,11 +344,7 @@ export default function Home() {
 
 
 
-                    <div className="flex items-center justify-between">
-                        <button className="bg-[#608D4B] hover:bg-[#43712E] text-white ml-2 font-semibold mt-4 py-2 px-8 rounded focus:outline-none focus:shadow-outline" type="button">
-                            Login
-                        </button>
-                    </div>
+                    
 
                 </form>
             </div>
