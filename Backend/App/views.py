@@ -1,14 +1,19 @@
 # backend/App/views.py
 
 from django.contrib.auth.models import User
-from rest_framework import generics
+from rest_framework import generics, permissions
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework import viewsets
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.http import JsonResponse
-from .serializers import UserSerializer, LoginSerializer
+from .models import Recipe
+from .serializers import UserSerializer, LoginSerializer, RecipeSerializer
+import json
 
 
 class SignUpView(generics.CreateAPIView):
@@ -42,15 +47,22 @@ class LoginView(APIView):
 
 
 
-def create_recipe(request):
-    if request.method == 'POST':
-        form = RecipeForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return JsonResponse({'message': 'Recipe created successfully'}, status=201)
-        else:
-            return JsonResponse({'errors': form.errors}, status=400)
-    else:
-        return JsonResponse({'error': 'Method not allowed'}, status=405)
+class RecipeCreateView(generics.CreateAPIView):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        serializer = RecipeSerializer(data=request.data)
+        if serializer.is_valid():
+            recipe = serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class RecipeListView(generics.ListAPIView):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
 
 
